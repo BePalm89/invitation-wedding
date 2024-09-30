@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+  background: url("/public/img/football-field.png") no-repeat center center;
+  background-size: cover;
+  height: 100%;
+  color: var(--white-color);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+

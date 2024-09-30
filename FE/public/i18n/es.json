@@ -1,0 +1,23 @@
+{
+  "title": {
+    "start": "Se empieza",
+    "one-way-bus": "14:20 autocar",
+    "ceremony": "15:30 Cerimonia",
+    "your-election": "La tua scelta",
+    "waiting": "TE ESPERAMOS!!"
+
+  },
+  "text": {
+    "welcome": "¡Hola, amig@s y familiares!",
+    "where": "Si has recibido este enlace, es porque queremos compartir contigo el día de la celebración de nuestro amor, el 3 de mayo de 2025, en la ",
+    "invitation": "Queremos que seais igual de protagonista que nosotros y para ello pedimos que vengais con ganas de reir, comer, beber, bailar, disfrutar y pasarlo bien.",
+    "booking": "Asi que quereis ser participe de ese gran dia solo teneis que confirmar la vuestra presencia.",
+    "present": "Si nos quieres ayudar a iniciar nuestra nueva vida ACEPTAMOS APORTACIONES DESINTERESADA al siguiente numero de cuenta ES87 2100 0812 1902 0091  1701.",
+    "one-way-bus": "Ponemos a vuestra disposición autocares, a las 14:20 desde el hotel ",
+    "ceremony-msg": "La ceremonia será a las 15:30 del 3 de mayo de 2025 en la ",
+    "your-election-msg": "Por favor rellena el siguiente formulario con las electiones que tenies que tomar respecto al dia de la boda para que podemos organizarlo sin problema."
+  },
+  "button": {
+    "fill-form": "Rellena el formulario"
+  }
+}

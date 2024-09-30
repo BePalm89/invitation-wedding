@@ -1,0 +1,22 @@
+{
+  "title": {
+    "start": "Iniziamo",
+    "one-way-bus": "14:20 autobus",
+    "ceremony": "15:30 Cerimonia",
+    "your-election": "La tua scelta",
+    "waiting": "TI ASPETTIAMO!!"
+  },
+  "text": {    
+    "welcome": "Ciao, amic@ e familiari!",
+    "where": "Se hai ricevuto questo link, è perché vogliamo condividere con te il giorno della celebrazione del nostro amore, il 3 maggio 2025, presso la ",
+    "invitation": "Vogliamo che siate protagonisti tanto quanto noi, e per questo vi chiediamo di venire con la voglia di ridere, mangiare, bere, ballare, divertirvi e passare una bella giornata insieme.",
+    "booking": "Se volete partecipare a questo grande giorno, dovete solo confermare la vostra presenza.",
+    "present": "Se ci volete aiutare a iniziare la nostra nuova vita, ACCETTIAMO CONTRIBUTI DISINTERESSATI al seguente numero di conto: ES87 2100 0812 1902 0091 1701.",
+    "one-way-bus": "Mettiamo a vostra disposizione autobus, alle 14:20 dall'hotel ",
+    "ceremony-msg": "La cerimonia si terrà alle 15:30 del 3 maggio 2025 presso la ",
+    "your-election-msg": "Per favore, compila il seguente modulo con le scelte che devi fare riguardo al giorno del matrimonio, in modo che possiamo organizzarci senza problemi."
+  },
+  "button": {
+    "fill-form": "Compila il modulo"
+  }
+}

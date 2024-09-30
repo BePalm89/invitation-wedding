@@ -1,0 +1,17 @@
+.welcome-message-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 36px;
+  margin: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: baseline;
+}
