@@ -5,7 +5,7 @@ import i18nBackend from "i18next-http-backend";
 const getCurrentHost =
   process.env.NODE_ENV === "development"
     ? "http://localhost:3000"
-    : "LINK TO PROD";
+    : "https://invitation-wedding-sigma.vercel.app";
 
 i18n
   .use(i18nBackend)
