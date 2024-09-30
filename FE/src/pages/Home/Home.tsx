@@ -5,15 +5,12 @@ import { Text } from "../../components/Text/Text";
 import "./Home.css";
 import { GoogleMapComponent } from "../../components/GoogleMap/GoogleMap";
 import { Button } from "../../components/Button/Button";
-import { useState } from "react";
-import { Modal } from "../../components/Modal/Modal";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
   const { t } = useTranslation();
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -75,9 +72,11 @@ export const Home = () => {
           alignment="right"
         />
         <Text text={t("text.your-election-msg")} />
-        <Button label={t("button.fill-form")} onClick={openModal}></Button>
-        <h1><img src="/img/party.png" alt="party icon"/> {t("title.waiting")} <img src="/img/party.png" alt="party icon"/></h1>
-        <Modal isOpen={isModalOpen} onClose={closeModal}></Modal>
+        <Button label={t("button.fill-form")} onClick={() => navigate('/form')}></Button>
+        <h1>
+          <img src="/img/party.png" alt="party icon" /> {t("title.waiting")}{" "}
+          <img src="/img/party.png" alt="party icon" />
+        </h1>
       </main>
     </div>
   );
