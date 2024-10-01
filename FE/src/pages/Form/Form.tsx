@@ -15,11 +15,13 @@ import {
   HStack,
   RadioGroup,
   Radio,
+  Box,
 } from "@chakra-ui/react";
 import { FormContainer } from "../../components/FormContainer/FormContainer";
 import { useForm } from "react-hook-form";
 import { Button as ChakraButton } from "@chakra-ui/react";
 import { useState } from "react";
+import "./Form.css";
 
 interface FormData {
   name: string;
@@ -57,7 +59,7 @@ export const Form = () => {
       <h1>{t("title.your-election")}</h1>
       <Text text={t("text.your-election-msg")} />
       <Text text={t("text.questions")} />
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className="form-container">
         <FormContainer>
           <FormControl id="name" isRequired isInvalid={!!errors.name}>
             <FormLabel>{t("form.name")}</FormLabel>
@@ -229,7 +231,7 @@ export const Form = () => {
                 id="numberOfPplReturnBus"
               >
                 <NumberInputField
-                _focus={{ bg: "white" }}
+                  _focus={{ bg: "white" }}
                   {...register("numberOfPplReturnBus", {
                     required: "Requerido",
                   })}
@@ -255,10 +257,15 @@ export const Form = () => {
             </FormControl>
           </FormContainer>
         )}
-
-        <ChakraButton type="submit" colorScheme="teal" width="full">
-          Submit
-        </ChakraButton>
+        <FormContainer>
+          <ChakraButton
+            type="submit"
+            colorScheme="teal"
+            width={{ base: "full", md: "30%" }}
+          >
+            Submit
+          </ChakraButton>
+        </FormContainer>
       </form>
     </div>
   );
