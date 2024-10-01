@@ -14,9 +14,25 @@
     "present": "Se ci volete aiutare a iniziare la nostra nuova vita, ACCETTIAMO CONTRIBUTI DISINTERESSATI al seguente numero di conto: ES87 2100 0812 1902 0091 1701.",
     "one-way-bus": "Mettiamo a vostra disposizione autobus, alle 14:20 dall'hotel ",
     "ceremony-msg": "La cerimonia si terrà alle 15:30 del 3 maggio 2025 presso la ",
-    "your-election-msg": "Per favore, compila il seguente modulo con le scelte che devi fare riguardo al giorno del matrimonio, in modo che possiamo organizzarci senza problemi."
+    "your-election-msg": "Per favore, compila il seguente modulo con le scelte che devi fare riguardo al giorno del matrimonio, in modo che possiamo organizzarci senza problemi.",
+    "questions": "Se avete domande, non esitate a contattarci."
+
   },
   "button": {
     "fill-form": "Compila il modulo"
+  },
+  "form": {
+    "name": "Nome e cognome:",
+    "assistants": "Numero di assistenti:",
+    "one-way-bus": "Ti interessa andare alla finca in autobus?",
+    "bus-ppl": "Numero di posti",
+    "return-bus": "Ti interessa tornare dalla finca in autobus?",
+    "time-return-bus": "A che orario preferisci tornare?",
+    "accommodation": "Ti interessa dormire negli hotel che ti abbiamo proposto?",
+    "number-of-accommodation": "Numero di camere:",
+    "which-hotel": "In quale hotel?",
+    "bcnHotel": "Ibis Meridiana",
+    "stigesHotel": "Hotel Sitges",
+    "allergies": "Hai intolleranze o allergie alimentari?"
   }
 }

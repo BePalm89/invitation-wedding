@@ -1,5 +1,4 @@
 import { LANGUAGES } from "../../constants";
-import i18n from "../../i18n";
 import "./Header.css";
 import {
   Menu,
@@ -11,8 +10,11 @@ import {
   Text,
   Image,
 } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 
 export const Header = () => {
+  const { i18n } = useTranslation();
+
   const onChangeLang = (lang_code: string) => {
     i18n.changeLanguage(lang_code);
   };

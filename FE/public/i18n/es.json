@@ -3,7 +3,7 @@
     "start": "Se empieza",
     "one-way-bus": "14:20 autocar",
     "ceremony": "15:30 Cerimonia",
-    "your-election": "La tua scelta",
+    "your-election": "Tu elección",
     "waiting": "TE ESPERAMOS!!"
 
   },
@@ -15,9 +15,24 @@
     "present": "Si nos quieres ayudar a iniciar nuestra nueva vida ACEPTAMOS APORTACIONES DESINTERESADA al siguiente numero de cuenta ES87 2100 0812 1902 0091  1701.",
     "one-way-bus": "Ponemos a vuestra disposición autocares, a las 14:20 desde el hotel ",
     "ceremony-msg": "La ceremonia será a las 15:30 del 3 de mayo de 2025 en la ",
-    "your-election-msg": "Por favor rellena el siguiente formulario con las electiones que tenies que tomar respecto al dia de la boda para que podemos organizarlo sin problema."
+    "your-election-msg": "Por favor rellena el siguiente formulario con las electiones que tenies que tomar respecto al dia de la boda para que podemos organizarlo sin problema.",
+    "questions": "Si tenéis alguna pregunta, no dudéis en contactar con nosotros."
   },
   "button": {
     "fill-form": "Rellena el formulario"
+  },
+  "form": {
+    "name": "Nombre y apellido:",
+    "assistants": "Número de asistentes:",
+    "one-way-bus": "Te interesa ir a la finca en autobús?",
+    "bus-ppl": "Nùmero de asientos",
+    "return-bus": "Te interesa volver de la finca en autobús?",
+    "time-return-bus": "En què horario prefieres",
+    "accommodation": "Te interesa dormir en los hotels que te hemos propuestos?",
+    "number-of-accommodation": "Nùmero de habitaciones:",
+    "which-hotel": "¿En cuál hotel?",
+    "bcnHotel": "Ibis Meridiana",
+    "stigesHotel": "Sitges hotel",
+    "allergies": "Tienes algunas intolerancias, alergias alimentarias?"
   }
 }

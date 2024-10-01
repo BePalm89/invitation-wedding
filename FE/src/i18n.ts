@@ -7,6 +7,8 @@ const getCurrentHost =
     ? "http://localhost:3000"
     : "https://invitation-wedding-sigma.vercel.app";
 
+console.log(getCurrentHost);
+
 i18n
   .use(i18nBackend)
   .use(initReactI18next)

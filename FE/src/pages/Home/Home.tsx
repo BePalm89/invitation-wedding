@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { Header } from "../../components/Header/Header";
 import { Title } from "../../components/Title/Title";
 import { Text } from "../../components/Text/Text";
 import "./Home.css";
@@ -14,7 +13,6 @@ export const Home = () => {
 
   return (
     <div>
-      <Header />
       <main>
         <Title
           icon={"/img/referee.png"}

@@ -5,6 +5,7 @@
     rgba(0, 0, 0, 0.65)
   ), url("/public/img/football-field.png") no-repeat center center;
   background-size: cover;
+  min-height: 100vh;
   height: 100%;
   color: var(--white-color);
   font-family: "Poppins", sans-serif;

@@ -1,0 +1,4 @@
+.form-container {
+    width: clamp(80%, 60%, 80%);
+    margin: 0 auto;
+}
