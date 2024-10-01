@@ -11,6 +11,11 @@ export const Home = () => {
 
   const navigate = useNavigate();
 
+  const navigateToForm = () => {
+    navigate("/form");
+    window.scroll(0,0);
+  }
+
   return (
     <div>
       <main>
@@ -70,7 +75,7 @@ export const Home = () => {
           alignment="right"
         />
         <Text text={t("text.your-election-msg")} />
-        <Button label={t("button.fill-form")} onClick={() => navigate('/form')}></Button>
+        <Button label={t("button.fill-form")} onClick={navigateToForm}></Button>
         <h1>
           <img src="/img/party.png" alt="party icon" /> {t("title.waiting")}{" "}
           <img src="/img/party.png" alt="party icon" />
