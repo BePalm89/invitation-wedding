@@ -128,3 +128,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# google credential
+wedding-invitation-437110-f1b7a06e3c7a.json
