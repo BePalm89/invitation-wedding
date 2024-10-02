@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 import { google } from "googleapis";
 
 const auth = new google.auth.GoogleAuth({
-  credentials: process.env.GOOGLE_APPLICATION_CREDENTIALS, // Ensure this is correctly set
+  credentials: JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS), // Ensure this is correctly set
   scopes: [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
