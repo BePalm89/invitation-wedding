@@ -3,7 +3,7 @@ import { Title } from "../../components/Title/Title";
 import { Text } from "../../components/Text/Text";
 import "./Home.css";
 import { GoogleMapComponent } from "../../components/GoogleMap/GoogleMap";
-import { Button } from "../../components/Button/Button";
+import { ButtonComponent } from "../../components/ButtonComponent/ButtonComponent";
 import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
@@ -65,15 +65,29 @@ export const Home = () => {
           icon={"/img/party.png"}
         />
         <Title
+          icon={"/img/yellow-card.png"}
+          text={t("title.return-bus")}
+          alignment="right"
+        />
+        <Text text={t("text.return-bus-msg")} />
+        <Title
+          icon={"/img/goal.png"}
+          text={t("title.hotels")}
+          alignment="left"
+        />
+        <Text text={t("text.hotels-msg")} />
+        <Title
           icon={"/img/substitution.png"}
           text={t("title.your-election")}
           alignment="right"
         />
         <Text text={t("text.your-election-msg")} />
-        <Button
+        <Text text={t("text.questions")} />
+        <ButtonComponent
+          type="button"
           label={t("button.fill-form")}
-          onClick={() => navigate("/form")}
-        ></Button>
+          onClick={() => navigate("/choices")}
+        ></ButtonComponent>
         <h1>
           <img src="/img/party.png" alt="party icon" /> {t("title.waiting")}{" "}
           <img src="/img/party.png" alt="party icon" />

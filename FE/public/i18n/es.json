@@ -4,8 +4,9 @@
     "one-way-bus": "14:20 autocar",
     "ceremony": "15:30 Cerimonia",
     "your-election": "Tu elección",
-    "waiting": "TE ESPERAMOS!!"
-
+    "waiting": "TE ESPERAMOS!!",
+    "return-bus": "Autocar de vuelta",
+    "hotels": "hoteles propuestos"
   },
   "text": {
     "welcome": "¡Hola, amig@s y familiares!",
@@ -16,10 +17,13 @@
     "one-way-bus": "Ponemos a vuestra disposición autocares, a las 14:20 desde el hotel ",
     "ceremony-msg": "La ceremonia será a las 15:30 del 3 de mayo de 2025 en la ",
     "your-election-msg": "Por favor rellena el siguiente formulario con las electiones que tenies que tomar respecto al dia de la boda para que podemos organizarlo sin problema.",
-    "questions": "Si tenéis alguna pregunta, no dudéis en contactar con nosotros."
+    "questions": "Si tenéis alguna pregunta, no dudéis en contactar con nosotros.",
+    "return-bus-msg": "Ponemos a vuestra disposición autocares de vuelta, desde la finca hasta el hotel de Sitges o el hotel de Barcelona, a la 1:00 de la mañana o a las 4:00",
+    "hotels-msg": "Ofrecemos dos opciones de hotel: una en Sitges y otra en Barcelona. Aunque no es obligatorio hospedarse en estos hoteles, puedes elegir otro hotel si lo prefieres. Sin embargo, ten en cuenta que tenemos descuentos especiales en estos dos hoteles, y los autobuses saldrán y volverán desde estos puntos."
   },
   "button": {
-    "fill-form": "Rellena el formulario"
+    "fill-form": "Rellena el formulario",
+    "submit": "Enviar"
   },
   "form": {
     "name": "Nombre y apellido:",
@@ -31,8 +35,17 @@
     "accommodation": "Te interesa dormir en los hotels que te hemos propuestos?",
     "number-of-accommodation": "Nùmero de habitaciones:",
     "which-hotel": "¿En cuál hotel?",
-    "bcnHotel": "Ibis Meridiana",
-    "stigesHotel": "Sitges hotel",
-    "allergies": "Tienes algunas intolerancias, alergias alimentarias?"
+    "bcnHotel": "Hotel IBIS Barcelona Meridiana",
+    "sitgesHotel": "Hotel Calipolis",
+    "allergies": "Tienes algunas intolerancias, alergias alimentarias?",
+    "no": "No",
+    "yes": "Si"
+  },
+  "form-validation": {
+    "required": "Por favor conteste la pregunta."
+  },
+  "message": {
+    "ok": "Gracias por responder. ¡Te esperamos en la boda!",
+    "not-ok": "Lo siento, ha habido un error. Inténtalo más tarde."
   }
 }

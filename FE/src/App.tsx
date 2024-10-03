@@ -2,9 +2,9 @@ import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import { Home } from "./pages/Home/Home";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Form } from "./pages/Form/Form";
 import { Header } from "./components/Header/Header";
 import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
+import { Choices } from "./pages/Choices/Choices";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/form" element={<Form />} />
+            <Route path="/choices" element={<Choices />} />
           </Routes>
         </div>
       </Router>
