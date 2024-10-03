@@ -27,14 +27,14 @@ interface FormData {
   name: string;
   numberOfAssistants: number;
   allergies: string;
-  oneWayBus: boolean;
+  isSleepingInHotel: boolean;
+  numberOfRooms: number;
+  whichHotel: string;
+  isUsingOneWayBus: boolean;
   numberOfPplOneWayBus: number;
-  returnBus: boolean;
+  isUsingReturnBus: boolean;
   numberOfPplReturnBus: number;
   preferredTimeToReturn: string;
-  sleepingPlace: boolean;
-  howManyPeopleSleep: number;
-  whichHotel: string;
 }
 
 export const Form = () => {
@@ -50,8 +50,27 @@ export const Form = () => {
     formState: { errors },
   } = useForm<FormData>();
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
+  const onSubmit = async (data: FormData) => {
+    try {
+      const response = await fetch(
+        "https://invitation-wedding-wfqf.vercel.app/api/v1/wedding/generate-excel",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("An error occur");
+      }
+
+      console.log("Success");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -71,9 +90,7 @@ export const Form = () => {
               id="name"
               {...register("name", { required: "Requerido" })}
             />
-            <FormErrorMessage>
-              {errors.name && errors.name.message}
-            </FormErrorMessage>
+            <FormErrorMessage>{errors.name?.message}</FormErrorMessage>
           </FormControl>
         </FormContainer>
         <FormContainer>
@@ -114,33 +131,43 @@ export const Form = () => {
           </FormControl>
         </FormContainer>
         <FormContainer>
-          <FormControl id="sleepingPlace" as="fieldset">
+          <FormControl id="isSleepingInHotel" as="fieldset" isRequired>
             <FormLabel as="legend">{t("form.accommodation")}</FormLabel>
             <RadioGroup
-              id="sleepingPlace"
+              id="isSleepingInHotel"
               onChange={(value) => setShowAccommodationPeople(value === "yes")}
             >
               <HStack spacing="24px">
-                <Radio value="yes">Yes</Radio>
-                <Radio value="now">No</Radio>
+                <Radio
+                  value="yes"
+                  {...register("isSleepingInHotel", { required: "Requerido" })}
+                >
+                  Yes
+                </Radio>
+                <Radio
+                  value="no"
+                  {...register("isSleepingInHotel", { required: "Requerido" })}
+                >
+                  No
+                </Radio>
               </HStack>
             </RadioGroup>
           </FormControl>
         </FormContainer>
         {showAccommodationPeople && (
           <FormContainer>
-            <FormControl id="howManyPeopleSleep" isRequired>
+            <FormControl id="numberOfRooms" isRequired>
               <FormLabel>{t("form.number-of-accommodation")}</FormLabel>
               <NumberInput
                 min={0}
                 variant="filled"
                 color="black"
-                isInvalid={!!errors.howManyPeopleSleep}
-                id="howManyPeopleSleep"
+                isInvalid={!!errors.numberOfRooms}
+                id="numberOfRooms"
               >
                 <NumberInputField
                   _focus={{ bg: "white" }}
-                  {...register("howManyPeopleSleep", {
+                  {...register("numberOfRooms", {
                     required: "Requerido",
                   })}
                 />
@@ -158,23 +185,43 @@ export const Form = () => {
               <FormLabel as="legend">{t("form.which-hotel")}</FormLabel>
               <RadioGroup>
                 <HStack spacing="24px">
-                  <Radio value="bcn">Ibis hotel</Radio>
-                  <Radio value="sitges">Sitges</Radio>
+                  <Radio
+                    value="bcn"
+                    {...register("whichHotel", { required: "Requerido" })}
+                  >
+                    Ibis hotel
+                  </Radio>
+                  <Radio
+                    value="sitges"
+                    {...register("whichHotel", { required: "Requerido" })}
+                  >
+                    Sitges
+                  </Radio>
                 </HStack>
               </RadioGroup>
             </FormControl>
           </FormContainer>
         )}
         <FormContainer>
-          <FormControl id="oneWayBus" as="fieldset">
+          <FormControl id="isUsingOneWayBus" as="fieldset">
             <FormLabel as="legend">{t("form.one-way-bus")}</FormLabel>
             <RadioGroup
-              id="oneWayBus"
+              id="isUsingOneWayBus"
               onChange={(value) => setShowHowManyPplOneWayBus(value === "yes")}
             >
               <HStack spacing="24px">
-                <Radio value="yes">Yes</Radio>
-                <Radio value="now">No</Radio>
+                <Radio
+                  value="yes"
+                  {...register("isUsingOneWayBus", { required: "Requerido" })}
+                >
+                  Yes
+                </Radio>
+                <Radio
+                  value="now"
+                  {...register("isUsingOneWayBus", { required: "Requerido" })}
+                >
+                  No
+                </Radio>
               </HStack>
             </RadioGroup>
           </FormControl>
@@ -205,15 +252,25 @@ export const Form = () => {
           </FormContainer>
         )}
         <FormContainer>
-          <FormControl id="returnBus" as="fieldset">
+          <FormControl id="isUsingReturnBus" as="fieldset">
             <FormLabel as="legend">{t("form.return-bus")}</FormLabel>
             <RadioGroup
-              id="returnBus"
+              id="isUsingReturnBus"
               onChange={(value) => setShowHowManyPplReturnBus(value === "yes")}
             >
               <HStack spacing="24px">
-                <Radio value="yes">Yes</Radio>
-                <Radio value="now">No</Radio>
+                <Radio
+                  value="yes"
+                  {...register("isUsingReturnBus", { required: "Requerido" })}
+                >
+                  Yes
+                </Radio>
+                <Radio
+                  value="now"
+                  {...register("isUsingReturnBus", { required: "Requerido" })}
+                >
+                  No
+                </Radio>
               </HStack>
             </RadioGroup>
           </FormControl>
@@ -250,8 +307,22 @@ export const Form = () => {
               <FormLabel as="legend">{t("form.time-return-bus")}</FormLabel>
               <RadioGroup id="preferredTimeToReturn">
                 <HStack spacing="24px">
-                  <Radio value="1">01:00am</Radio>
-                  <Radio value="4">04:00am</Radio>
+                  <Radio
+                    value="1"
+                    {...register("preferredTimeToReturn", {
+                      required: "Requerido",
+                    })}
+                  >
+                    01:00am
+                  </Radio>
+                  <Radio
+                    value="4"
+                    {...register("preferredTimeToReturn", {
+                      required: "Requerido",
+                    })}
+                  >
+                    04:00am
+                  </Radio>
                 </HStack>
               </RadioGroup>
             </FormControl>

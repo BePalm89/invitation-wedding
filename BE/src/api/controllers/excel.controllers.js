@@ -1,8 +1,16 @@
 import nodemailer from "nodemailer";
 import { google } from "googleapis";
 
+let credentials;
+
+if (process.env.NODE_ENV === "production") {
+  credentials = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS);
+} else {
+  credentials = process.env.GOOGLE_APPLICATION_CREDENTIALS;
+}
+
 const auth = new google.auth.GoogleAuth({
-  credentials: JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS), // Ensure this is correctly set
+  credentials,
   scopes: [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -15,14 +23,16 @@ const drive = google.drive("v3");
 export const generateExcel = async (req, res, next) => {
   try {
     console.log("generateExcel", req.body);
+
     const data = req.body;
+
     const authClient = await auth.getClient();
 
     // Define the title of the Google Sheet
     const sheetTitle = "Data Wedding";
 
     // Specify the folder ID where you want to store the spreadsheet
-    const folderId = "1PNPH3vGfv8Lte2m2FlEx4S8xF7bLDssa"; 
+    const folderId = "1PNPH3vGfv8Lte2m2FlEx4S8xF7bLDssa";
 
     // Search for existing sheets
     const existingSheets = await drive.files.list({
@@ -65,7 +75,23 @@ export const generateExcel = async (req, res, next) => {
       console.log(`Moved spreadsheet to folder: ${folderId}`);
 
       // Add column headers
-      const headerValues = [["Name", "Surname"]];
+      const headerValues = [
+        [
+          "Nombre",
+          "Número de asistentes",
+          "Alergias",
+          "Hotel",
+          "Nùmero de habitaciones",
+          "IBIS hotel BCN",
+          "Hotel Calipolis Sitges",
+          "Bus de ida",
+          "Nùmero de asientos - ida",
+          "Bus de vuelta",
+          "Nùmero de asientos - vuelta",
+          "horario vuelta - 01:00",
+          "horario vuelta - 04:00",
+        ],
+      ];
       const headerRequest = {
         spreadsheetId: spreadsheetId,
         range: "Sheet1!A1", // The range where you want to set headers
@@ -91,8 +117,57 @@ export const generateExcel = async (req, res, next) => {
       auth: authClient,
     });
 
+    let ibisHotelRooms = 0;
+    let calipoliHotelRooms = 0;
+
+    if(data.isSleepingInHotel === 'no') {
+      ibisHotelRooms = 0;
+      calipoliHotelRooms = 0;
+    } else {
+      if( data.whichHotel === 'bcn') {
+        ibisHotelRooms = data.numberOfRooms;
+        calipoliHotelRooms = 0;
+      } else if ( data.whichHotel === 'sitges') {
+        ibisHotelRooms = 0
+        calipoliHotelRooms = data.numberOfRooms;;
+      }
+    }
+
+    let returnBus1 = 0;
+    let returnBus4 = 0;
+
+
+    if( data.isUsingReturnBus === 'no') {
+      returnBus1 = 0;
+      returnBus4 = 0;
+    } else if ( data.isUsingReturnBus === 'yes') {
+      if( data.preferredTimeToReturn === '1') {
+        returnBus1 = data.numberOfPplReturnBus;
+        returnBus4 = 0;
+      } else if ( data.preferredTimeToReturn === '4' ) {
+        returnBus1 = 0;
+        returnBus4 = data.numberOfPplReturnBus;
+      }
+    }
+
     // Prepare new values to append
-    const newValues = [[data.name, data.surname]];
+    const newValues = [
+      [
+        data.name,
+        data.numberOfAssistants,
+        data.allergies,
+        data.isSleepingInHotel,
+        data.isSleepingInHotel === "yes" ? data.numberOfRooms : 0,
+        ibisHotelRooms,
+        calipoliHotelRooms,
+        data.isUsingOneWayBus,
+        data.isUsingOneWayBus === 'yes' ? data.numberOfPplOneWayBus : 0,
+        data.isUsingReturnBus,
+        data.isUsingReturnBus === 'yes' ? data.numberOfPplReturnBus : 0,
+        returnBus1,
+        returnBus4
+      ],
+    ];
 
     // If there are existing values, append to the next empty row
     const appendRow = currentValues.data.values
