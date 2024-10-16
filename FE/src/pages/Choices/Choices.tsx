@@ -239,7 +239,7 @@ export const Choices = () => {
             name="preferredTimeToReturn"
             register={register}
             options={[
-              { value: "1", label: "01:00am" },
+              { value: "1", label: "00:00am" },
               { value: "4", label: "04:00am" },
             ]}
             errors={errors.preferredTimeToReturn}
