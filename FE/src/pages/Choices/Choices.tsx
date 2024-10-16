@@ -78,8 +78,8 @@ export const Choices = () => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        //"https://invitation-wedding-wfqf.vercel.app/api/v1/wedding/generate-excel",
-        "http://localhost:8000/api/v1/wedding/generate-excel",
+        "https://invitation-wedding-wfqf.vercel.app/api/v1/wedding/generate-excel",
+        //"http://localhost:8000/api/v1/wedding/generate-excel",
         {
           method: "POST",
           headers: {
@@ -92,7 +92,7 @@ export const Choices = () => {
       if (!response.ok) {
         throw new Error("An error occur");
       }
-      window.scrollTo({ top:0, behavior: 'smooth'} );
+      window.scrollTo({ top: 0, behavior: "smooth" });
       showToast("success", t("message.ok"));
       setIsLoading(false);
     } catch (error) {
