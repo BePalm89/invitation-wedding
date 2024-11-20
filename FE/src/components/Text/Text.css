@@ -1,11 +1,11 @@
 .text-container {
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin: 2rem auto 0 auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 2rem auto 0 auto;
 }
 
 .text-container a {
-    text-decoration: underline;
+  text-decoration: underline;
 }

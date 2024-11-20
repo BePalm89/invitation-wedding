@@ -1,51 +1,60 @@
 {
   "title": {
-    "start": "Iniziamo",
-    "one-way-bus": "14:20 autobus",
+    "start": "Si inizia",
+    "one-way-bus": "14:15 Autobus",
     "ceremony": "15:30 Cerimonia",
-    "your-election": "La tua scelta",
+    "your-election": "Le tue scelte",
     "waiting": "TI ASPETTIAMO!!",
     "return-bus": "Autobus di ritorno",
-     "hotels": "Hotel proposti"
+    "hotels": "Hotel proposti"
   },
   "text": {
-    "welcome": "Ciao, amic@ e familiari!",
-    "where": "Se hai ricevuto questo link, è perché vogliamo condividere con te il giorno della celebrazione del nostro amore, il 3 maggio 2025, presso la ",
-    "invitation": "Vogliamo che siate protagonisti tanto quanto noi, e per questo vi chiediamo di venire con la voglia di ridere, mangiare, bere, ballare, divertirvi e passare una bella giornata insieme.",
-    "booking": "Se volete partecipare a questo grande giorno, dovete solo confermare la vostra presenza.",
-    "present": "Se ci volete aiutare a iniziare la nostra nuova vita, ACCETTIAMO CONTRIBUTI DISINTERESSATI al seguente numero di conto: ES87 2100 0812 1902 0091 1701.",
-    "one-way-bus": "Mettiamo a vostra disposizione autobus, alle 14:20 dall'hotel ",
-    "ceremony-msg": "La cerimonia si terrà alle 15:30 del 3 maggio 2025 presso la ",
-    "your-election-msg": "Per favore, compila il seguente modulo con le scelte che devi fare riguardo al giorno del matrimonio, in modo che possiamo organizzarci senza problemi.",
-    "questions": "Se avete domande, non esitate a contattarci.",
-    "return-bus-msg": "Mettiamo a vostra disposizione autobus di ritorno, dalla proprietà all'hotel di Sitges o all'hotel di Barcellona, alle 1:00 di mattina o alle 4:00.",
-    "hotels-msg": "Offriamo due opzioni di hotel: uno a Sitges e uno a Barcellona. Sebbene non sia obbligatorio soggiornare in questi hotel, puoi scegliere un altro hotel se lo desideri. Tuttavia, ti informiamo che abbiamo sconti speciali in questi due hotel, e gli autobus partiranno e torneranno da queste località."
+    "welcome": "Ciao, amici e familiari!",
+    "where": "Se hai ricevuto questo link, è perché vogliamo condividere con te il giorno della celebrazione del nostro amore, sabato 3 maggio 2025, presso la ",
+    "invitation": "Vogliamo che siate protagonisti come noi, e per questo vi chiediamo di venire con voglia di ridere, mangiare, bere, ballare, divertirvi e stare bene.",
+    "booking": "Se vuoi partecipare a questo grande giorno, basta confermare la tua presenza.",
+    "present": "Il matrimonio è a nostro carico (IT87 2100 0812 1902 0091 1701).",
+    "one-way-bus": "Mettiamo a disposizione degli autobus alle 14:15 dal hotel ",
+    "ceremony-msg": "La cerimonia si terrà alle 15:30 di sabato 3 maggio 2025 presso la ",
+    "your-election-msg": "Per favore, compila il modulo seguente con le scelte che devi fare riguardo al giorno del matrimonio, in modo che possiamo organizzarci senza problemi.",
+    "questions": "Se hai qualche domanda, non esitare a contattarci. ( Claudia: +34 722517618, Fredi: +34 675015258, Carolina: +34 690264384) ",
+    "claudia-phone": "Claudia: +34 722517618",
+    "fredi-phone": "Fredi: +34 675015258",
+    "carolina-phone": "Carolina (wedding planner): +34 690264384",
+    "return-bus-msg": "00:00 - Partenza del primo autobus per gli hotel a Sitges e Barcellona. Un secondo autobus sarà disponibile alle 03:00 per fare lo stesso percorso.",
+    "hotels-msg": "Offriamo due opzioni di hotel: uno a Sitges e uno a Barcellona. Sebbene non sia obbligatorio soggiornare in questi hotel, puoi scegliere un altro hotel se lo preferisci. Tuttavia, tieni presente che abbiamo sconti speciali per questi due hotel, e gli autobus partiranno e torneranno da questi punti.",
+    "hotels-sitges-msg": "(è nel centro di Sitges) Av. Sofia, 2, 608870 Sitges, Barcellona. Prenotazioni tramite il sito ",
+    "hotels-sitges-web": "www.hotelcalipolis.com",
+    "hotels-sitges-msg-2": " Codice sconto 5% (codice: WEDDING25) sul trattamento Solo pernottamento o Pernottamento e colazione. Nelle osservazioni dovrai aggiungere che partecipi al matrimonio di Claudia & Fredi.",
+    "hotels-msg-3": ": se vuoi ottenere uno sconto del 5%, devi richiedere la carta fedeltà Ibis (è gratuita) inviando una richiesta alla seguente email H3310@accor.com e indicando che partecipi al matrimonio di Claudia & Fredi."
   },
   "button": {
     "fill-form": "Compila il modulo",
-    "submit": "Inviare"
+    "submit": "Invia"
   },
   "form": {
     "name": "Nome e cognome:",
-    "assistants": "Numero di assistenti:",
-    "one-way-bus": "Ti interessa andare alla finca in autobus?",
-    "bus-ppl": "Numero di posti",
-    "return-bus": "Ti interessa tornare dalla finca in autobus?",
-    "time-return-bus": "A che orario preferisci tornare?",
-    "accommodation": "Ti interessa dormire negli hotel che ti abbiamo proposto?",
+    "assistants": "Numero di partecipanti:",
+    "one-way-bus": "Sei interessato a prendere l'autobus per la location?",
+    "bus-ppl": "Numero di persone",
+    "return-bus": "Sei interessato a tornare dalla location con l'autobus?",
+    "time-return-bus": "A che ora preferisci?",
+    "accommodation": "Sei interessato a pernottare negli hotel che ti abbiamo proposto?",
     "number-of-accommodation": "Numero di camere:",
     "which-hotel": "In quale hotel?",
     "bcnHotel": "Hotel IBIS Barcelona Meridiana",
-    "sitgesHotel": "Hotel Calipolis",
+    "sitgesHotel": "Hotel Calipolis, Sitges",
     "allergies": "Hai intolleranze o allergie alimentari?",
     "no": "No",
-    "yes": "Si"
+    "yes": "Sì",
+    "help-accommodation-sitges": "Hotel Calipolis di Sitges (è nel centro di Sitges) Av. Sofia, 2, 608870 Sitges, Barcellona. Prenotazioni tramite il sito www.hotelcalipolis.com. Codice sconto 5% (codice: WEDDING25) sul trattamento Solo pernottamento o Pernottamento e colazione. Nelle osservazioni dovrai aggiungere che partecipi al matrimonio di Claudia & Fredi.",
+    "help-accommodation-bcn": "IBIS Barcelona Meridiana: se vuoi ottenere uno sconto del 5%, devi richiedere la carta fedeltà Ibis (è gratuita) inviando una richiesta alla seguente email H3310@accor.com e indicando che partecipi al matrimonio di Claudia & Fredi."
   },
   "form-validation": {
-    "required": "Per favore rispondi alla domanda."
+    "required": "Per favore, rispondi alla domanda."
   },
   "message": {
     "ok": "Grazie per aver risposto. Ti aspettiamo al matrimonio!",
-    "not-ok": "Mi dispiace, c'è stato un errore. Riprova più tardi."
+    "not-ok": "Ci dispiace, c'è stato un errore. Riprova più tardi."
   }
 }

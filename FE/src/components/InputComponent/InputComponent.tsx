@@ -22,13 +22,12 @@ export const InputComponent: React.FC<InputComponentProps> = ({
   register,
   errors,
   isRequired,
-  errorMessage
+  errorMessage,
 }) => {
   return (
     <FormItemContainer>
       <FormControl id={name} isRequired={isRequired} isInvalid={!!errors}>
         <FormLabel>{label}</FormLabel>
-
         <Input
           variant="filled"
           color="black"

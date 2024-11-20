@@ -158,6 +158,10 @@ export const Choices = () => {
           isRequired={true}
           errorMessage={t("form-validation.required")}
           onChange={handleAccommodationPeople}
+          helperText={[
+            t("form.help-accommodation-sitges"),
+            t("form.help-accommodation-bcn"),
+          ]}
         />
         {showAccommodationPeople && (
           <InputNumberComponent
@@ -240,7 +244,7 @@ export const Choices = () => {
             register={register}
             options={[
               { value: "1", label: "00:00am" },
-              { value: "4", label: "04:00am" },
+              { value: "4", label: "03:00am" },
             ]}
             errors={errors.preferredTimeToReturn}
             isRequired={true}

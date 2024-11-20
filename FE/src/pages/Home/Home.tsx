@@ -76,6 +76,48 @@ export const Home = () => {
           alignment="left"
         />
         <Text text={t("text.hotels-msg")} />
+
+        <div className="text-container">
+          <p>
+            <span>
+              <a
+                href="https://www.hotelcalipolis.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Sitges Hotel Calipolis
+              </a>
+            </span>
+            {t("text.hotels-sitges-msg")}
+            <span>
+              {" "}
+              <a
+                href="https://www.hotelcalipolis.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                www.hotelcalipolis.com
+              </a>
+            </span>
+            <span>{t("text.hotels-sitges-msg-2")}</span>
+          </p>
+        </div>
+        {/*         <Text
+          link={{
+            label: " ",
+            href: "",
+          }}
+          text={t("")}
+          linkAtStart={true}
+        /> */}
+        <Text
+          link={{
+            label: "IBIS Barcelona Meridiana",
+            href: "https://all.accor.com/hotel/3310/index.es.shtml?utm_campaign=seo+maps&utm_medium=seo+maps&utm_source=google+Maps",
+          }}
+          text={t("text.hotels-msg-3")}
+          linkAtStart={true}
+        />
         <Title
           icon={"/img/substitution.png"}
           text={t("title.your-election")}
@@ -83,6 +125,9 @@ export const Home = () => {
         />
         <Text text={t("text.your-election-msg")} />
         <Text text={t("text.questions")} />
+        <Text text={t("text.claudia-phone")} />
+        <Text text={t("text.fredi-phone")} />
+        <Text text={t("text.carolina-phone")} />
         <ButtonComponent
           type="button"
           label={t("button.fill-form")}

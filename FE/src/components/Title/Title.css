@@ -1,38 +1,38 @@
 .title-container {
-    width: max-content;
-    display: flex;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 2rem 0;
 }
 
 .align-left {
-    justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 .align-right {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .title-info-container {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background-color: var(--primary-color);
-    padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--primary-color);
+  padding: 0.5rem 1rem;
 }
 
 .title-container h2 {
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 4px;
 }
 
 .border-radius-right {
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem; 
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
 .border-radius-left {
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem; 
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
 }
