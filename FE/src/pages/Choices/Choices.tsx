@@ -115,7 +115,7 @@ export const Choices = () => {
       )}
       <h1>{t("title.your-election")}</h1>
       <Text text={t("text.your-election-msg")} />
-      <Text text={t("text.questions")} />
+      <Text text={t("form.questions")} />
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="form-container"
