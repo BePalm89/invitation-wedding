@@ -120,31 +120,30 @@ export const generateExcel = async (req, res, next) => {
     let ibisHotelRooms = 0;
     let calipoliHotelRooms = 0;
 
-    if(data.isSleepingInHotel === 'no') {
+    if (data.isSleepingInHotel === "no") {
       ibisHotelRooms = 0;
       calipoliHotelRooms = 0;
     } else {
-      if( data.whichHotel === 'bcn') {
+      if (data.whichHotel === "bcn") {
         ibisHotelRooms = data.numberOfRooms;
         calipoliHotelRooms = 0;
-      } else if ( data.whichHotel === 'sitges') {
-        ibisHotelRooms = 0
-        calipoliHotelRooms = data.numberOfRooms;;
+      } else if (data.whichHotel === "sitges") {
+        ibisHotelRooms = 0;
+        calipoliHotelRooms = data.numberOfRooms;
       }
     }
 
     let returnBus1 = 0;
     let returnBus4 = 0;
 
-
-    if( data.isUsingReturnBus === 'no') {
+    if (data.isUsingReturnBus === "no") {
       returnBus1 = 0;
       returnBus4 = 0;
-    } else if ( data.isUsingReturnBus === 'yes') {
-      if( data.preferredTimeToReturn === '1') {
+    } else if (data.isUsingReturnBus === "yes") {
+      if (data.preferredTimeToReturn === "1") {
         returnBus1 = data.numberOfPplReturnBus;
         returnBus4 = 0;
-      } else if ( data.preferredTimeToReturn === '4' ) {
+      } else if (data.preferredTimeToReturn === "4") {
         returnBus1 = 0;
         returnBus4 = data.numberOfPplReturnBus;
       }
@@ -161,11 +160,11 @@ export const generateExcel = async (req, res, next) => {
         ibisHotelRooms,
         calipoliHotelRooms,
         data.isUsingOneWayBus,
-        data.isUsingOneWayBus === 'yes' ? data.numberOfPplOneWayBus : 0,
+        data.isUsingOneWayBus === "yes" ? data.numberOfPplOneWayBus : 0,
         data.isUsingReturnBus,
-        data.isUsingReturnBus === 'yes' ? data.numberOfPplReturnBus : 0,
+        data.isUsingReturnBus === "yes" ? data.numberOfPplReturnBus : 0,
         returnBus1,
-        returnBus4
+        returnBus4,
       ],
     ];
 
@@ -200,7 +199,7 @@ export const generateExcel = async (req, res, next) => {
     const mailOptions = {
       to: "cla.palmerini@gmail.com",
       subject: "Wedding data",
-      text: `Please check the excel file at this link https://docs.google.com/spreadsheets/d/1UXPWOesdKaMp_d19JX4DcutUyTl3brYQFdAOp3ySA00/edit?gid=0#gid=0.`,
+      text: `Please check the excel file at this link https://docs.google.com/spreadsheets/d/1H9lOfUVc9La-ZI7k0W3XNjlO2nRRQDi0dccM9dCjfHg/edit?gid=0#gid=0`,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
