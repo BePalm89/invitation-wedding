@@ -44,6 +44,13 @@ export const Home = () => {
             href: "https://all.accor.com/hotel/3310/index.es.shtml?utm_campaign=seo+maps&utm_medium=seo+maps&utm_source=google+Maps",
           }}
         />
+        <Text
+            text={t("text.one-way-bus-sitges")}
+            link={{
+              label: "Calipolis, Sitges",
+              href: "https://www.hotelcalipolis.com/",
+            }}
+        />
         <GoogleMapComponent
           location={{ lat: 41.435472, lng: 2.182126 }}
           icon={"/img/bus.png"}

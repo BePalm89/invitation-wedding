@@ -42,6 +42,12 @@ export const GoogleMapComponent: React.FC<GoogleMapComponentProps> = ({
           title: "Custom Marker",
         });
 
+      advancedMarker.addListener("click", () => {
+        const googleMapsUrl = `https://www.google.com/maps?q=${location.lat},${location.lng}`;
+        window.open(googleMapsUrl, "_blank");
+      });
+
+
       if (advancedMarker) markerRef.current = advancedMarker;
     } else {
       console.error("AdvancedMarkerElement is not available.");

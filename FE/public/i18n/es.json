@@ -12,11 +12,12 @@
     "welcome": "¡Hola, amig@s y familiares!",
     "where": "Si has recibido este enlace, es porque queremos compartir contigo el día de la celebración de nuestro amor, el Sábado 3 de Mayo de 2025, en la ",
     "invitation": "Queremos que seáis igual de protagonistas que nosotros y para ello os pedimos que vengáis con ganas de reir, comer, beber, bailar, disfrutar y pasarlo bien.",
-    "booking": "Así que queréis ser partícipes de ese gran día sólo tenéis que confirmar vuestra presencia.",
+    "booking": "Así que si queréis ser partícipes de ese gran día sólo tenéis que confirmar vuestra presencia.",
     "present": "La boda corre de nuestra cuenta (ES87 2100 0812 1902 0091  1701).",
-    "one-way-bus": "Ponemos a vuestra disposición autocares, a las 14:15 desde el hotel ",
+    "one-way-bus": "Ponemos a vuestra disposición autocares, a las 14:00 desde el hotel ",
+    "one-way-bus-sitges": "A las 15:00 desde el hotel ",
     "ceremony-msg": "La ceremonia será a las 15:30 del Sábado 3 de Mayo de 2025 en la ",
-    "your-election-msg": "Por favor rellena el siguiente formulario con las elecciones que tenéis que tomar respecto al día de la boda para que podamos organizarlo sin problema.",
+    "your-election-msg": "Por favor, rellena el siguiente formulario con tus elecciones respecto al día de la boda para que podamos organizarlo sin problema",
     "questions": "Si tenéis alguna pregunta, no dudéis en contactar con nosotros.",
     "claudia-phone": "Claudia: +34 722517618",
     "fredi-phone": "Fredi: +34 675015258",
@@ -26,7 +27,7 @@
     "hotels-sitges-msg": "(está en el centro de Sitges) Av. Sofia, 2, 608870 Sitges, Barcelona. Reservas a través de la web ",
     "hotels-sitges-web": "www.hotelcalipolis.com",
     "hotels-sitges-msg-2": " Código descuento 5% (código: WEDDING25) sobre el régimen Sólo alojamiento o Alojamiento y desayuno. En observaciones tenéis que añadir que vais a la boda de Claudia & Fredi.",
-    "hotels-msg-3": ": si queréis obtener un 5% de descuento tenéis que solicitar la tarjeta de fidelidad del Ibis (es gratis) en el siguiente correo H3310@accor.com e indicar que vais a la boda de Claudia & Fredi."
+    "hotels-msg-3": ": Para reservar las habitaciones, tenéis que enviar un correo a H3310@accor.com e indicar que vais a la boda de Claudia y Fredi. (si queréis obtener un 5% de descuento tenéis que solicitar la tarjeta de fidelidad del Ibis (es gratis) al mismo correo)."
   },
   "button": {
     "fill-form": "Rellena el formulario",
@@ -49,7 +50,7 @@
     "no": "No",
     "yes": "Si",
     "help-accommodation-sitges": "Sitges Hotel Calipolis (está en el centro de Sitges) Av. Sofia, 2, 608870 Sitges, Barcelona. Reservas a través de la web www.hotelcalipolis.com Código descuento 5% (código: WEDDING25) sobre el régimen Sólo alojamiento o Alojamiento y desayuno. En observaciones tenéis que añadir que vais a la boda de Claudia & Fredi.",
-    "help-accommodation-bcn": "Por el IBIS Barcelona Meridiana Si queréis obtener un 5% de descuento tenéis que solicitar la tarjeta de fidelidad del Ibis (es gratis) en el siguiente correo H3310@accor.com e indicar que vais a la boda de Claudia & Fredi."
+    "help-accommodation-bcn": "IBIS Barcelona Meridiana: Para reservar las habitaciones, tenéis que enviar un correo a H3310@accor.com e indicar que vais a la boda de Claudia y Fredi. (si queréis obtener un 5% de descuento tenéis que solicitar la tarjeta de fidelidad del Ibis (es gratis) al mismo correo)"
   },
   "form-validation": {
     "required": "Por favor conteste la pregunta."
