@@ -47,7 +47,6 @@ export const GoogleMapComponent: React.FC<GoogleMapComponentProps> = ({
         window.open(googleMapsUrl, "_blank");
       });
 
-
       if (advancedMarker) markerRef.current = advancedMarker;
     } else {
       console.error("AdvancedMarkerElement is not available.");
