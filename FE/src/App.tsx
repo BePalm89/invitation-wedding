@@ -13,6 +13,9 @@ function App() {
       <ScrollToTop />
         <div className="App">
           <Header />
+            <div className="img-container">
+            <img src="/img/boda.jpg" alt="boda" className="boda"/>
+            </div>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/choices" element={<Choices />} />

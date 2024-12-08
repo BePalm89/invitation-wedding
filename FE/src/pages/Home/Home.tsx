@@ -31,6 +31,7 @@ export const Home = () => {
           <Text text={t("text.invitation")} />
           <Text text={t("text.booking")} />
           <Text text={t("text.present")} />
+          <p>{t("text.iban")}</p>
         </div>
         <Title
           icon={"/img/yellow-card.png"}
@@ -44,6 +45,11 @@ export const Home = () => {
             href: "https://all.accor.com/hotel/3310/index.es.shtml?utm_campaign=seo+maps&utm_medium=seo+maps&utm_source=google+Maps",
           }}
         />
+
+        <GoogleMapComponent
+          location={{ lat: 41.435472, lng: 2.182126 }}
+          icon={"/img/bus.png"}
+        />
         <Text
             text={t("text.one-way-bus-sitges")}
             link={{
@@ -52,8 +58,11 @@ export const Home = () => {
             }}
         />
         <GoogleMapComponent
-          location={{ lat: 41.435472, lng: 2.182126 }}
-          icon={"/img/bus.png"}
+            location={{ lat: 41.2341652, lng: 1.8042442 }}
+            icon={"/img/bus.png"}
+        />
+        <Text
+            text={t("text.more-info")}
         />
         <Title
           icon={"/img/goal.png"}
@@ -63,9 +72,12 @@ export const Home = () => {
         <Text
           text={t("text.ceremony-msg")}
           link={{
-            label: "Masia Casa Del Mar",
+            label: "Masia Casa Del Mar.",
             href: "https://masiacasadelmar.com/",
           }}
+        />
+        <Text
+            text={t("text.party")}
         />
         <GoogleMapComponent
           location={{ lat: 41.2197539, lng: 1.7508404 }}
@@ -130,7 +142,7 @@ export const Home = () => {
           text={t("title.your-election")}
           alignment="right"
         />
-        <Text text={t("text.your-election-msg")} />
+        <Text text={t("text.your-election-msg")} style="big"/>
         <Text text={t("text.questions")} />
         <Text text={t("text.claudia-phone")} />
         <Text text={t("text.fredi-phone")} />

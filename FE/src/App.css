@@ -12,3 +12,21 @@
   overflow-x: hidden;
 }
 
+.App .img-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.App .boda {
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+}
+
+@media (max-width: 800px) {
+  .App .boda {
+    width: 150px;
+    height: 150px;
+  }
+}

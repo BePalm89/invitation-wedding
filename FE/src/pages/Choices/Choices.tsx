@@ -17,13 +17,12 @@ interface FormData {
   name: string;
   numberOfAssistants: number;
   allergies: string;
-  isSleepingInHotel: boolean;
-  numberOfRooms: number;
-  whichHotel: string;
   isUsingOneWayBus: boolean;
   numberOfPplOneWayBus: number;
+  fromHotel: string;
   isUsingReturnBus: boolean;
   numberOfPplReturnBus: number;
+  toHotel: string;
   preferredTimeToReturn: string;
 }
 
@@ -31,16 +30,10 @@ export const Choices = () => {
   const { t } = useTranslation();
   const toast = useToast();
 
-  const [showAccommodationPeople, setShowAccommodationPeople] = useState(false);
   const [showHowManyPplOneWayBus, setShowHowManyPplOneWayBus] = useState(false);
   const [showHowManyPplReturnBus, setShowHowManyPplReturnBus] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
-
-  const handleAccommodationPeople = (value: string) => {
-    if (value === "no") resetField("numberOfRooms");
-    setShowAccommodationPeople(value === "yes");
-  };
 
   const handleShowHowManyPplOneWayBus = (value: string) => {
     if (value === "no") resetField("numberOfPplOneWayBus");
@@ -72,10 +65,34 @@ export const Choices = () => {
     register,
     formState: { errors, isValid },
     resetField,
+    watch
   } = useForm<FormData>({ mode: "all" });
+
+  const numberOfAssistants = watch("numberOfAssistants");
 
   const onSubmit = async (data: FormData) => {
     setIsLoading(true);
+
+    const { numberOfAssistants, allergies, isUsingOneWayBus, numberOfPplOneWayBus, fromHotel, isUsingReturnBus, numberOfPplReturnBus, toHotel, preferredTimeToReturn } = data;
+
+    const assistantNames = Array.from({ length: numberOfAssistants || 0 })
+        .map((_, index) => data[`name${index + 1}` as keyof FormData])
+        .filter(Boolean) // Remove any empty names
+        .join(", ");
+
+    const body = {
+      numberOfAssistants,
+      name: assistantNames, // Include only the concatenated names
+      allergies,
+      isUsingOneWayBus,
+      numberOfPplOneWayBus,
+      fromHotel,
+      isUsingReturnBus,
+      numberOfPplReturnBus,
+      toHotel,
+      preferredTimeToReturn,
+    };
+
     try {
       const response = await fetch(
         "https://invitation-wedding-wfqf.vercel.app/api/v1/wedding/generate-excel",
@@ -85,7 +102,7 @@ export const Choices = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(data),
+          body: JSON.stringify(body),
         }
       );
 
@@ -121,23 +138,27 @@ export const Choices = () => {
         className="form-container"
         noValidate
       >
-        <InputComponent
-          label={t("form.name")}
-          name="name"
-          register={register}
-          errors={errors.name}
-          isRequired={true}
-          errorMessage={t("form-validation.required")}
-        />
         <InputNumberComponent
-          label={t("form.assistants")}
-          name="numberOfAssistants"
-          register={register}
-          min={1}
-          errors={errors.numberOfAssistants}
-          isRequired={true}
-          errorMessage={t("form-validation.required")}
+            label={t("form.assistants")}
+            name="numberOfAssistants"
+            register={register}
+            min={1}
+            errors={errors.numberOfAssistants}
+            isRequired={true}
+            errorMessage={t("form-validation.required")}
         />
+        {Array.from({ length: numberOfAssistants || 0 }).map((_, index) => {
+          const fieldName = `name${index + 1}` as keyof FormData;
+          return ( <InputComponent
+              key={index}
+              label={`${t("form.name")} ${index + 1}:`}
+              name={fieldName}
+              register={register}
+              errors={errors[fieldName]}
+              isRequired={true}
+              errorMessage={t("form-validation.required")}
+          />)
+        })}
         <TextAreaComponent
           label={t("form.allergies")}
           name="allergies"
@@ -146,48 +167,6 @@ export const Choices = () => {
           isRequired={true}
           errorMessage={t("form-validation.required")}
         />
-        <RadioButtonComponent
-          label={t("form.accommodation")}
-          name="isSleepingInHotel"
-          register={register}
-          options={[
-            { value: "yes", label: t("form.yes") },
-            { value: "no", label: t("form.no") },
-          ]}
-          errors={errors.isSleepingInHotel}
-          isRequired={true}
-          errorMessage={t("form-validation.required")}
-          onChange={handleAccommodationPeople}
-          helperText={[
-            t("form.help-accommodation-sitges"),
-            t("form.help-accommodation-bcn"),
-          ]}
-        />
-        {showAccommodationPeople && (
-          <InputNumberComponent
-            label={t("form.number-of-accommodation")}
-            name="numberOfRooms"
-            register={register}
-            min={1}
-            errors={errors.numberOfRooms}
-            isRequired={true}
-            errorMessage={t("form-validation.required")}
-          />
-        )}
-        {showAccommodationPeople && (
-          <RadioButtonComponent
-            label={t("form.which-hotel")}
-            name="whichHotel"
-            register={register}
-            options={[
-              { value: "bcn", label: t("form.bcnHotel") },
-              { value: "sitges", label: t("form.sitgesHotel") },
-            ]}
-            errors={errors.whichHotel}
-            isRequired={true}
-            errorMessage={t("form-validation.required")}
-          />
-        )}
         <RadioButtonComponent
           label={t("form.one-way-bus")}
           name="isUsingOneWayBus"
@@ -200,6 +179,9 @@ export const Choices = () => {
           isRequired={true}
           errorMessage={t("form-validation.required")}
           onChange={handleShowHowManyPplOneWayBus}
+          helperText={[
+            t("form.help-bus"),
+          ]}
         />
         {showHowManyPplOneWayBus && (
           <InputNumberComponent
@@ -211,6 +193,20 @@ export const Choices = () => {
             isRequired={true}
             errorMessage={t("form-validation.required")}
           />
+        )}
+        {showHowManyPplOneWayBus && (
+            <RadioButtonComponent
+                label={t("form.which-hotel")}
+                name="fromHotel"
+                register={register}
+                options={[
+                  { value: "bcn", label: t("form.bcnHotel") },
+                  { value: "sitges", label: t("form.sitgesHotel") },
+                ]}
+                errors={errors.fromHotel}
+                isRequired={true}
+                errorMessage={t("form-validation.required")}
+            />
         )}
 
         <RadioButtonComponent
@@ -225,6 +221,9 @@ export const Choices = () => {
           isRequired={true}
           errorMessage={t("form-validation.required")}
           onChange={handleShowHowManyPplReturnBus}
+          helperText={[
+            t("form.help-bus"),
+          ]}
         />
         {showHowManyPplReturnBus && (
           <InputNumberComponent
@@ -236,6 +235,20 @@ export const Choices = () => {
             isRequired={true}
             errorMessage={t("form-validation.required")}
           />
+        )}
+        {showHowManyPplReturnBus && (
+            <RadioButtonComponent
+                label={t("form.from-hotel")}
+                name="toHotel"
+                register={register}
+                options={[
+                  { value: "bcn", label: t("form.bcnHotel") },
+                  { value: "sitges", label: t("form.sitgesHotel") },
+                ]}
+                errors={errors.toHotel}
+                isRequired={true}
+                errorMessage={t("form-validation.required")}
+            />
         )}
         {showHowManyPplReturnBus && (
           <RadioButtonComponent

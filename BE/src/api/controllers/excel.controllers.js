@@ -77,17 +77,15 @@ export const generateExcel = async (req, res, next) => {
       // Add column headers
       const headerValues = [
         [
-          "Nombre",
           "Número de asistentes",
+          "Nombres",
           "Alergias",
-          "Hotel",
-          "Nùmero de habitaciones",
-          "IBIS hotel BCN",
-          "Hotel Calipolis Sitges",
           "Bus de ida",
           "Nùmero de asientos - ida",
+          "Hotel ida",
           "Bus de vuelta",
           "Nùmero de asientos - vuelta",
+          "Hotel vuelta",
           "horario vuelta - 01:00",
           "horario vuelta - 04:00",
         ],
@@ -117,22 +115,6 @@ export const generateExcel = async (req, res, next) => {
       auth: authClient,
     });
 
-    let ibisHotelRooms = 0;
-    let calipoliHotelRooms = 0;
-
-    if (data.isSleepingInHotel === "no") {
-      ibisHotelRooms = 0;
-      calipoliHotelRooms = 0;
-    } else {
-      if (data.whichHotel === "bcn") {
-        ibisHotelRooms = data.numberOfRooms;
-        calipoliHotelRooms = 0;
-      } else if (data.whichHotel === "sitges") {
-        ibisHotelRooms = 0;
-        calipoliHotelRooms = data.numberOfRooms;
-      }
-    }
-
     let returnBus1 = 0;
     let returnBus4 = 0;
 
@@ -148,21 +130,18 @@ export const generateExcel = async (req, res, next) => {
         returnBus4 = data.numberOfPplReturnBus;
       }
     }
-
     // Prepare new values to append
     const newValues = [
       [
-        data.name,
         data.numberOfAssistants,
+        data.name,
         data.allergies,
-        data.isSleepingInHotel,
-        data.isSleepingInHotel === "yes" ? data.numberOfRooms : 0,
-        ibisHotelRooms,
-        calipoliHotelRooms,
         data.isUsingOneWayBus,
         data.isUsingOneWayBus === "yes" ? data.numberOfPplOneWayBus : 0,
+        data.isUsingOneWayBus === "yes" ? data.fromHotel : "",
         data.isUsingReturnBus,
         data.isUsingReturnBus === "yes" ? data.numberOfPplReturnBus : 0,
+        data.isUsingReturnBus === "yes" ? data.toHotel : "",
         returnBus1,
         returnBus4,
       ],

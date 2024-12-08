@@ -1,7 +1,7 @@
 {
   "title": {
     "start": "Si inizia",
-    "one-way-bus": "14:15 Autobus",
+    "one-way-bus": "14:00 Autobus",
     "ceremony": "15:30 Cerimonia",
     "your-election": "Le tue scelte",
     "waiting": "TI ASPETTIAMO!!",
@@ -13,17 +13,20 @@
     "where": "Se hai ricevuto questo link, è perché vogliamo condividere con te il giorno della celebrazione del nostro amore, sabato 3 maggio 2025, presso la ",
     "invitation": "Vogliamo che siate protagonisti come noi, e per questo vi chiediamo di venire con voglia di ridere, mangiare, bere, ballare, divertirvi e stare bene.",
     "booking": "Se vuoi partecipare a questo grande giorno, basta confermare la tua presenza.",
-    "present": "Per iniziare al meglio questo percorso insieme, un vostro dono sarà per noi un gesto prezioso (ES87 2100 0812 1902 0091 1701).",
+    "present": "Per iniziare al meglio questo percorso insieme, un vostro dono sarà per noi un gesto prezioso.",
+    "iban": "ES87 2100 0812 1902 0091  1701",
     "one-way-bus": "Mettiamo a disposizione degli autobus alle 14:00 dal hotel ",
     "one-way-bus-sitges": "Alle 15:00 dall' hotel ",
+    "more-info": "O potete andare direttamente alla...",
     "ceremony-msg": "La cerimonia si terrà alle 15:30 di sabato 3 maggio 2025 presso la ",
-    "your-election-msg": "Per favore, compila il seguente modulo con le tue preferenze riguardo al giorno del matrimonio, così possiamo organizzarlo senza problemi.",
-    "questions": "Se hai qualche domanda, non esitare a contattarci. ( Claudia: +34 722517618, Fredi: +34 675015258, Carolina: +34 690264384) ",
+    "party": "E il banchetto... e la festa... ANCHE!",
+    "your-election-msg": "Per favore, se parteciperai è molto importante compilare il seguente modulo con le tue scelte riguardo al giorno del matrimonio affinché possiamo organizzarlo senza problemi.",
+    "questions": "Se hai qualche domanda, non esitare a contattarci.",
     "claudia-phone": "Claudia: +34 722517618",
     "fredi-phone": "Fredi: +34 675015258",
     "carolina-phone": "Carolina (wedding planner): +34 690264384",
     "return-bus-msg": "00:00 - Partenza del primo autobus per gli hotel a Sitges e Barcellona. Un secondo autobus sarà disponibile alle 03:00 per fare lo stesso percorso.",
-    "hotels-msg": "Offriamo due opzioni di hotel: uno a Sitges e uno a Barcellona. Sebbene non sia obbligatorio soggiornare in questi hotel, puoi scegliere un altro hotel se lo preferisci. Tuttavia, tieni presente che abbiamo sconti speciali per questi due hotel, e gli autobus partiranno e torneranno da questi punti.",
+    "hotels-msg": "Offriamo due opzioni di hotel: uno a Sitges e uno a Barcellona. Sebbene non sia obbligatorio soggiornare in questi hotel, puoi scegliere un altro soggiorno se lo preferisci. Tuttavia, tieni presente che abbiamo sconti speciali per questi due hotel, e gli autobus partiranno e torneranno da questi punti.",
     "hotels-sitges-msg": "(è nel centro di Sitges) Av. Sofia, 2, 608870 Sitges, Barcellona. Prenotazioni tramite il sito ",
     "hotels-sitges-web": "www.hotelcalipolis.com",
     "hotels-sitges-msg-2": " Codice sconto 5% (codice: WEDDING25) sul trattamento Solo pernottamento o Pernottamento e colazione. Nelle osservazioni dovrai aggiungere che partecipi al matrimonio di Claudia & Fredi.",
@@ -34,7 +37,8 @@
     "submit": "Invia"
   },
   "form": {
-    "name": "Nome e cognome:",
+    "questions": "Se hai qualche domanda, non esitare a contattarci. ( Claudia: +34 722517618, Fredi: +34 675015258, Carolina: +34 690264384) ",
+    "name": "Nome e cognome",
     "assistants": "Numero di partecipanti:",
     "one-way-bus": "Sei interessato a prendere l'autobus per la location?",
     "bus-ppl": "Numero di persone",
@@ -42,14 +46,16 @@
     "time-return-bus": "A che ora preferisci?",
     "accommodation": "Sei interessato a pernottare negli hotel che ti abbiamo proposto?",
     "number-of-accommodation": "Numero di camere:",
-    "which-hotel": "In quale hotel?",
+    "which-hotel": "Da quale hotel?",
+    "from-hotel": "A quale hotel?",
     "bcnHotel": "Hotel IBIS Barcelona Meridiana",
     "sitgesHotel": "Hotel Calipolis, Sitges",
     "allergies": "Hai intolleranze o allergie alimentari?",
     "no": "No",
     "yes": "Sì",
     "help-accommodation-sitges": "Hotel Calipolis di Sitges (è nel centro di Sitges) Av. Sofia, 2, 608870 Sitges, Barcellona. Prenotazioni tramite il sito www.hotelcalipolis.com. Codice sconto 5% (codice: WEDDING25) sul trattamento Solo pernottamento o Pernottamento e colazione. Nelle osservazioni dovrai aggiungere che partecipi al matrimonio di Claudia & Fredi.",
-    "help-accommodation-bcn": "IBIS Barcelona Meridiana: se vuoi ottenere uno sconto del 5%, devi richiedere la carta fedeltà Ibis (è gratuita) inviando una richiesta alla seguente email H3310@accor.com e indicando che partecipi al matrimonio di Claudia & Fredi."
+    "help-accommodation-bcn": "IBIS Barcelona Meridiana: se vuoi ottenere uno sconto del 5%, devi richiedere la carta fedeltà Ibis (è gratuita) inviando una richiesta alla seguente email H3310@accor.com e indicando che partecipi al matrimonio di Claudia & Fredi.",
+    "help-bus": "Ti ricordiamo che gli autobus partono dagli hotel proposti (non è obbligatorio soggiornare lì"
   },
   "form-validation": {
     "required": "Per favore, rispondi alla domanda."
